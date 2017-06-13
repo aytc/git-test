@@ -1,0 +1,53 @@
+/*
+ *Git Kurulumu ve İlk Ayarların Yapılması.
+ */
+ 
+#Linux Ortamına Git Kurmak istediğimizde
+ sudo apt-get install git
+ 
+#Clone indirme
+https://github.com/aytc/repostoryname.git
+
+#Proxy Hatası alırsan
+git config --global http.proxy http://user:pass@serverip:port
+
+#SSL Hatası alırsan bir seferliğine 
+git config --global http.sslverify false
+
+#Eğer clone indirdiğinde dizin yapın tutmuyorsa
+cd /var/www/matterialtheme.com/wp-content/
+git init
+git remote add origin 
+git fetch
+git checkout -t origin/master
+
+# or create a new repository on the command line 
+git init
+git add . veya [file name]
+git commit -m "first commit"
+git remote add origin https://github.com/aytc/repostoryname/git
+git push -u origin master
+
+# or push an existing repository from the command line 
+git remote add origin https://github.com/aytc/repostoryname/git
+git push -u origin master
+
+#Cacheyi siliyor
+git rm . -r --cached
+
+#Durumu gösterir neler değişmiş neler olmuş
+git status
+
+#Dosya ekleme
+git add .
+git add "dosya adı"
+
+#Değişen dosyaları kendi git klasörüne gönderiyorsun
+git commit -m "Açıklama"
+
+#Değişen dosyaları sunucuya gönderiyorsun
+git push -u origin master
+
+#If you have'nt committed yet, first do commit and then do git pull and push
+
+
